@@ -9,12 +9,23 @@ print(str(winCount) +' Wins ' + str(lossCount) + ' Losses ' + str(tieCount) + ' 
 while game:
     print('Enter your move: (r)ock (p)aper (s)cissors or (q)uit')
     computerChoice = random.randint(1, 3)
-    if computerChoice == 1:
-        computerChoice = 'rock'
-    elif computerChoice == 2:
-        computerChoice = 'paper'
-    else:
-        computerChoice = 'scissors'
+
+#     if computerChoice == 1:
+#         computerChoice = 'rock'
+#     elif computerChoice == 2:
+#         computerChoice = 'paper'
+#     else:
+#         computerChoice = 'scissors'
+
     playerChoice = input()
+    if playerChoice == 'r':
+        playerChoice = 1
+    elif playerChoice == 'p':
+        playerChoice = 2
+    elif playerChoice == 3:
+        playerChoice == 's'
+    else:
+        print('Please enter (r)ock (p)aper (s)cissors or (q)uit')
+
     print(computerChoice)
     print(playerChoice)
