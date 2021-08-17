@@ -1,29 +1,30 @@
-import random
+import random, sys
 game = True
 winCount = 0
 lossCount = 0
 tieCount = 0
-print('ROCK, PAPER, SCISSORS')
-print(str(winCount) +' Wins ' + str(lossCount) + ' Losses ' + str(tieCount) + ' Ties')
+
 
 while game:
+    print()
+    print('ROCK, PAPER, SCISSORS')
+    print(str(winCount) +' Wins ' + str(lossCount) + ' Losses ' + str(tieCount) + ' Ties')
     print('Enter your move: (r)ock (p)aper (s)cissors or (q)uit')
     computerChoice = random.randint(1, 3)
-
-#     if computerChoice == 1:
-#         computerChoice = 'rock'
-#     elif computerChoice == 2:
-#         computerChoice = 'paper'
-#     else:
-#         computerChoice = 'scissors'
 
     playerChoice = input()
     if playerChoice == 'r':
         playerChoice = 1
+        print('You chose rock.')
     elif playerChoice == 'p':
         playerChoice = 2
+        print('You chose paper.')
     elif playerChoice == 's':
-        playerChoice == 3
+        playerChoice = 3
+        print('You chose scissors.')
+    elif playerChoice == 'q':
+        sys.exit
+        break
     else:
         print('Invalid input. Please enter (r)ock (p)aper (s)cissors or (q)uit')
 
@@ -34,16 +35,20 @@ while game:
     elif computerChoice == 3:
         print('The computer chose scissors.')
 
-    if playerChoice in range(1,3):
-        if playerChoice > computerChoice:
+    if playerChoice in range(1,4):
+        if (playerChoice - computerChoice) % 3 == 1:
+            #print(str(playerChoice) + ' - ' + str(computerChoice) + ' % 3 = 1')
             print('Player win!')
-        elif playerChoice < computerChoice:
+            winCount = winCount + 1
+        elif (playerChoice - computerChoice) % 3 == 2:
+            #print(str(playerChoice) + ' - ' + str(computerChoice) + ' % 3 = 2')
             print('Computer win!')
-        elif playerChoice == computerChoice:
+            lossCount = lossCount + 1
+        elif (playerChoice - computerChoice) % 3 == 0:
+            #print(str(playerChoice) + ' - ' + str(computerChoice) + ' % 3 = 0')
             print('Its a tie!')
+            tieCount = tieCount + 1
         else:
             print('Something went wrong, please try again')
 
 
-#     print(computerChoice)
-#     print(playerChoice)
