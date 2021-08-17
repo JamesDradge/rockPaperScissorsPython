@@ -22,10 +22,28 @@ while game:
         playerChoice = 1
     elif playerChoice == 'p':
         playerChoice = 2
-    elif playerChoice == 3:
-        playerChoice == 's'
+    elif playerChoice == 's':
+        playerChoice == 3
     else:
-        print('Please enter (r)ock (p)aper (s)cissors or (q)uit')
+        print('Invalid input. Please enter (r)ock (p)aper (s)cissors or (q)uit')
 
-    print(computerChoice)
-    print(playerChoice)
+    if computerChoice == 1:
+        print('The computer chose rock.')
+    elif computerChoice == 2:
+        print('The computer chose paper.')
+    elif computerChoice == 3:
+        print('The computer chose scissors.')
+
+    if playerChoice in range(1,3):
+        if playerChoice > computerChoice:
+            print('Player win!')
+        elif playerChoice < computerChoice:
+            print('Computer win!')
+        elif playerChoice == computerChoice:
+            print('Its a tie!')
+        else:
+            print('Something went wrong, please try again')
+
+
+#     print(computerChoice)
+#     print(playerChoice)
