@@ -1,11 +1,10 @@
 import random, sys
-game = True
 winCount = 0
 lossCount = 0
 tieCount = 0
 
 
-while game:
+while True:
     print()
     print('ROCK, PAPER, SCISSORS')
     print(str(winCount) +' Wins ' + str(lossCount) + ' Losses ' + str(tieCount) + ' Ties')
